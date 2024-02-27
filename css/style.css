@@ -1,0 +1,558 @@
+@keyframes move-nuvem {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes move-cenario {
+  from {
+    right: -130px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes pulo-mario {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 200px;
+  }
+  90% {
+    bottom: 200px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes voo-mario {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: calc(100% - 300px);
+    left: 200px;
+  }
+  75% {
+    bottom: calc(100% - 300px);
+    left: 200px;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    transform: translate(0px -200px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 10px;
+  }
+  25% {
+    font-size: 20px;
+  }
+  50% {
+    font-size: 30px;
+  }
+  75% {
+    font-size: 40px;
+  }
+  100% {
+    font-size: 100px;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.modal.habilitar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal .modal-login {
+  width: 600px;
+  min-height: 400px;
+  max-height: 500px;
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 20px #FCCF2F;
+  padding: 50px;
+  border-radius: 30px;
+  display: none;
+  position: relative;
+}
+
+.modal .modal-login.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadein 1s forwards;
+}
+
+.modal .modal-login .input-jogador {
+  width: 400px;
+  height: 50px;
+  border: solid 3px #199BD9;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  outline: none;
+}
+
+.modal .modal-login .btn-start {
+  width: 300px;
+  height: 70px;
+}
+
+.modal .modal-login .regra {
+  text-align: center;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.modal .modal-game-over {
+  width: 600px;
+  min-height: 400px;
+  max-height: 500px;
+  background-image: linear-gradient(#199BD9, #e7e7e7);
+  box-shadow: 2px 2px 20px #fb0202;
+  border-radius: 30px;
+  display: none;
+}
+
+.modal .modal-game-over.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modal-game-over .img-game-over {
+  width: 300px;
+}
+
+.modal .modal-game-over .wrapper-btn {
+  display: flex;
+  gap: 30px;
+}
+
+.modal .modal-ranking {
+  position: relative;
+  width: 650px;
+  min-height: 400px;
+  max-height: 500px;
+  background-image: linear-gradient(#199BD9, #e7e7e7);
+  box-shadow: 2px 2px 20px #fb0202;
+  border-radius: 30px;
+  padding: 30px 20px;
+  display: none;
+  overflow: visible;
+}
+
+.modal .modal-ranking.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fadein 1s forwards;
+}
+
+.modal .modal-ranking .wrapper-tabela {
+  width: 100%;
+  max-height: 250px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  border: solid 1px black;
+}
+
+.modal .modal-ranking .wrapper-tabela .tabela {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-text-stroke: 2px black;
+}
+
+.modal .modal-ranking .wrapper-tabela .tabela .coluna {
+  padding: 5px;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar {
+  max-height: 10px;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar-thumb {
+  background: #199BD9;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-radius: 20px;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.modal .modal-ranking .img-mario {
+  position: absolute;
+  right: -100px;
+  bottom: 0px;
+}
+
+.modal .modal-ranking .img-mario.img-mario2 {
+  left: -100px;
+}
+
+.modal .regras {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: white;
+  height: 60px;
+}
+
+.modal .somIcon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 0;
+  top: 5%;
+  cursor: pointer;
+}
+
+.modal .btn-modal {
+  background: none;
+  border: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #bd827c;
+  text-transform: uppercase;
+  padding: 15px;
+  margin: 30px 0px;
+  font-size: 34px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.modal .btn-modal .btn-start {
+  width: 200px;
+}
+
+.modal .titulo {
+  font-size: 36px;
+  text-align: center;
+  margin: 20px 0px;
+  -webkit-text-stroke: 3px black;
+  height: 100px;
+}
+
+.modal .btn-red-tr:not(:disabled) {
+  cursor: pointer;
+  background-color: #E62319;
+}
+
+.modal .btn-red-tr:not(:disabled)::before {
+  position: absolute;
+  content: "";
+  border-top: 5px solid ligthen(#E62319, 5%);
+  border-left: 5px solid ligthen(#E62319, 5%);
+  border-right: 5px solid #cf2017;
+  border-bottom: 5px solid #cf2017;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  transition: 1s;
+}
+
+.modal .btn-red-tr:not(:disabled):hover {
+  box-shadow: 7px 7px #8a150f, -7px -7px #f07b75;
+  transition: 1s;
+}
+
+.modal .btn-red-tr:not(:disabled):hover::before {
+  border: 0px;
+}
+
+.modal .btn-ranking, .modal .btn-reiniciar {
+  width: 200px;
+  height: 65px;
+  font-size: 30px;
+}
+
+.modal .btn-reiniciar-ranking {
+  max-height: 200px;
+  min-height: 65px;
+  width: 80%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'mario';
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'mario';
+  src: url("../fonts/SuperMario256.ttf");
+}
+
+.cenario {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  border: solid 1px red;
+  background-image: linear-gradient(#199BD9, #fff);
+  border-bottom: 16px solid #44AF35;
+}
+
+.cenario.iniciar .img-nuvem {
+  animation: move-nuvem 20s infinite linear;
+}
+
+.cenario.iniciar .img-nuvem2 {
+  animation: move-nuvem 20s infinite linear 9s;
+}
+
+.cenario.iniciar .img-moeda {
+  animation: move-cenario 2.5s infinite linear;
+}
+
+.cenario.iniciar .img-moeda2 {
+  animation: move-cenario 2.5s infinite linear .5s;
+}
+
+.cenario.iniciar .img-moeda3 {
+  animation: move-cenario 2.5s infinite linear 1s;
+}
+
+.cenario.iniciar .img-estrela {
+  animation: move-cenario 10s infinite linear;
+}
+
+.cenario.iniciar .img-estrela2 {
+  animation: move-cenario 4s infinite linear 3s;
+}
+
+.cenario .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cenario .header .div-topo {
+  width: 750px;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border: solid 4px #199BD9;
+  box-shadow: 3px 3px #FCCF2F, 1px 0px 0.4em #060606;
+  opacity: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  position: relative;
+  overflow: visible;
+}
+
+.cenario .header .div-topo .coluna {
+  display: block;
+  text-align: center;
+}
+
+.cenario .header .div-topo .coluna .titulo {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #199BD9;
+  margin-bottom: 10px;
+}
+
+.cenario .header .div-topo .coluna-nome-jogador {
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.cenario .header .div-topo .img-logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  margin: 0 auto;
+}
+
+.cenario .header .div-topo .placar {
+  display: flex;
+  gap: 10px;
+}
+
+.cenario .sleep {
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+.cenario .sleep.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fade-up .5s forwards;
+}
+
+.cenario .sleep .contagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 8px #E62319;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-size: 80px;
+  padding-top: 20px;
+  margin-top: 2%;
+  animation: pulse 1s infinite;
+}
+
+.cenario .sleep .regras-jogo {
+  width: 700px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2%;
+  gap: 5px;
+  padding: 10px;
+}
+
+.cenario .sleep .regras-jogo .bloco-regras {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cenario .sleep .regras-jogo .bloco-regras .img-regras {
+  width: 80px;
+}
+
+.cenario .img-mario {
+  width: 135px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cenario .img-nuvem {
+  position: absolute;
+  top: 200px;
+  right: -500px;
+}
+
+.cenario .img-nuvem2 {
+  position: absolute;
+  top: 300px;
+  right: -500px;
+}
+
+.cenario .img-tubo {
+  position: absolute;
+  bottom: 0;
+  right: -80px;
+}
+
+.cenario .img-bala {
+  position: absolute;
+  bottom: 95px;
+  right: -130px;
+}
+
+.cenario .img-moeda {
+  position: absolute;
+  bottom: 170px;
+  right: -60px;
+}
+
+.cenario .img-estrela {
+  position: absolute;
+  top: 200px;
+  right: -60px;
+}
+
+.cenario .pular {
+  animation: pulo-mario 0.5s ease-out;
+}
+
+.cenario .voar {
+  animation: voo-mario 1.5s ease-out;
+}
+
+.cenario .abaixar {
+  width: 70px;
+  left: 3%;
+}
+
+.cenario .game-over {
+  width: 135px;
+}
+
+.azul {
+  color: #199BD9;
+}
+
+.verde {
+  color: #44AF35;
+}
+
+.vermelho {
+  color: #E62319;
+}
+
+.amarelo {
+  color: #FCCF2F;
+}
