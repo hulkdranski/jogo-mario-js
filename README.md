@@ -3,7 +3,7 @@ Mario game made with HTML, SCSS and JavaScript
 
 <div class="markdown-body entry-content container-lg p-3" itemprop="text">
 	<p class="text-center" align="center">
-		<img alt="mario" src="https://miscelaneaecia.com.br/wp-content/uploads/2023/10/mario-bros.png" />
+		<img alt="mario" src="/img/gitimage.png" />
 	</p>
 	<h2 class="f4 my-3">
 		Descripction
